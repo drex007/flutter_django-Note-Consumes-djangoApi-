@@ -5,8 +5,10 @@ import 'package:flutter_django/pages/myHomePage.dart';
 import 'package:flutter_django/repository/notes_repo.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:flutter/services.dart';
 import 'dependencies/deps.dart' as dep;
 void main()  async {
+
    WidgetsFlutterBinding.ensureInitialized();
   await dep.init();
   
@@ -15,11 +17,17 @@ void main()  async {
 }
 
 class MyApp extends StatelessWidget {
+  
   const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    //Avoid Landscape screenRotation 
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ]);
     return ScreenUtilInit(
       designSize: Size(360, 640),
       builder: (){

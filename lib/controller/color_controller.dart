@@ -7,15 +7,12 @@ RxInt get mycolor => _mycolor;
 
 defaultColor(){
   _mycolor = 0.obs;
-  print(mycolor);
+
 }
 redColor(){
-  _mycolor = 1.obs;
-
-  print(mycolor);}
+  _mycolor = 1.obs;}
 
   pinkColor(){
-  _mycolor = 2.obs;
-  print(mycolor);}
+  _mycolor = 2.obs;}
 
 }

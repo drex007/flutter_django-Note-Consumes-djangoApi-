@@ -44,11 +44,11 @@ void getData() async{
 void postData(String bodyData) async{
   var postdata = await http.post(Uri.parse(createUri), body: {'body': bodyData});
   update();
-  print(postdata.statusCode);
+ 
 }
 void deleteData(int id)  async {
   var deleteNote = await http.delete(Uri.parse("https://myflutterdjango.herokuapp.com/notes/${id}/delete"),);
-  print(deleteNote.statusCode);
+ 
   getData();
   update();
 
